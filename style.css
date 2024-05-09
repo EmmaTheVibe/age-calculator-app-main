@@ -119,8 +119,7 @@ img{
     inherits: false;
 }
 .yrs {
-    transition: --yrNum 1s;
-    /* transition-delay: .05s; */
+    transition: --yrNum 10s;
     counter-reset: yrNum var(--yrNum);
     display: none;
 }
