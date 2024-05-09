@@ -1,0 +1,202 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* input[type=number]{
+    -moz-appearance: textfield;
+} */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(0, 0%, 94%);
+    font-family: 'Poppins';
+}
+.container {
+    margin-top: 80px;
+    width: 530px;
+    height: 450px;
+    border-radius: 14px;
+    border-bottom-right-radius: 100px;
+    background-color: #FFFFFF;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+.formbox {
+    width: 380px;
+    height: 110px;
+    border-bottom: 2px solid hsl(0, 0%, 94%);
+    position: relative;
+    margin-bottom: 16px;
+}
+form {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    position: relative;
+    /* border: 1px solid red; */
+}
+label {
+    font-weight: 700;
+    font-size: 14px;
+    color: hsl(0, 0%, 8%);
+}
+input {
+    width: 100px;
+    height: 45px;
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(0, 0%, 8%);
+    border: 2px solid hsl(0, 0%, 94%);
+    border-radius: 8px;
+    margin-right: 20px;
+    padding-left: 10px;
+    outline: none;
+    margin-top: 4px;
+    transition: border .25s linear;
+}
+input:focus {
+    border: 2px solid hsl(259, 100%, 65%);
+}
+button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    right: -55px;
+    bottom: -32px;
+    border: none;
+    background-color: hsl(259, 100%, 65%);
+}
+button:hover {
+    background-color: hsl(0, 0%, 8%);
+    cursor: pointer;
+}
+img{
+    width: 30px;
+}
+
+@property --dayNum {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+.dy {
+    transition: --dayNum 1s;
+    /* transition-delay: .05s; */
+    counter-reset: dayNum var(--dayNum);
+    display: none;
+}
+.dy::after {
+    content: counter(dayNum);
+}
+
+@property --mthNum {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+.mths {
+    transition: --mthNum 1s;
+    /* transition-delay: .05s; */
+    counter-reset: mthNum var(--mthNum);
+    display: none;
+}
+.mths::after {
+    content: counter(mthNum);
+}
+
+@property --yrNum {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+.yrs {
+    transition: --yrNum 1s;
+    /* transition-delay: .05s; */
+    counter-reset: yrNum var(--yrNum);
+    display: none;
+}
+.yrs::after {
+    content: counter(yrNum);
+}
+.txt {
+    font-size: 52px;
+    font-weight: 800;
+    /* font-style: italic; */
+    color: hsl(0, 0%, 8%);
+    position: relative;
+}
+/* .dash {} */
+#dash {
+    color: hsl(259, 100%, 65%);
+}
+.error {
+    color: hsl(0, 100%, 67%);
+    opacity: 0;
+    font-size: 10px;
+}
+
+.errorTag {
+    color: hsl(0, 100%, 67%);
+}
+.errorInput {
+    border: 2px solid hsl(0, 100%, 67%);
+}
+
+.errorTag2 {
+    color: hsl(0, 100%, 67%);
+}
+.errorInput2 {
+    border: 2px solid hsl(0, 100%, 67%);
+}
+
+@media screen and (max-width:550px){
+    .container{
+        width: 320px;
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-top: 46px;
+        height: 410px;
+        margin-bottom: 10px;
+    }
+    .formbox {
+        width: 100%;
+        margin-bottom: 50px;
+        height: 114px;
+    }
+    form{
+        justify-content: space-between;
+    }
+    label{
+        font-size: 12px;
+    }
+    input{
+        width: 82px;
+        margin-right: 0;
+        font-size: 16px;
+    }
+    button{
+        right: 43%;
+        width: 50px;
+        height: 50px;
+        bottom: -28px;
+    }
+    img{
+        width: 26px;
+    }
+    .txt {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .error {
+        font-size: 7px;
+    }
+}
