@@ -270,7 +270,7 @@ form.addEventListener('submit', function(submit){
             displayDay.style.setProperty('--dayNum', calcDay)
             displayMnth.style.setProperty('--mthNum', calcMonth)
             displayYrs.style.setProperty('--yrNum', calcYear)
-        }, 100);
+        }, 1000);
     }
     if(dateExists) {
         calcAge()
