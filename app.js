@@ -266,10 +266,32 @@ form.addEventListener('submit', function(submit){
         displayYrs.style.setProperty('--yrNum', 0)
         displayYrs.style.display = 'unset'
 
+        const singularYr = document.querySelector('.singular-yr')
+        const singularMt = document.querySelector('.singular-mt')
+        const singularDy = document.querySelector('.singular-dy')
+
         setTimeout(() => {
             displayDay.style.setProperty('--dayNum', calcDay)
             displayMnth.style.setProperty('--mthNum', calcMonth)
             displayYrs.style.setProperty('--yrNum', calcYear)
+
+            if(calcDay===1){
+                singularDy.innerText = 'day'
+            } else {
+                singularDy.innerText = 'days'
+            }
+
+            if(calcMonth===1){
+                singularMt.innerText = 'month'
+            } else {
+                singularMt.innerText = 'months'
+            }
+
+            if(calcYear===1){
+                singularYr.innerText = 'year'
+            } else {
+                singularYr.innerText = 'years'
+            }
         }, 100);
     }
     if(dateExists) {
